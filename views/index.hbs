@@ -1,237 +1,178 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Кинотеатр с удобным бронированием билетов, расписанием сеансов, заказом еды и эксклюзивными предложениями.">
-    <meta name="keywords" content="кинотеатр, бронирование билетов, расписание кино, заказ еды, эксклюзивные предложения, фильмы">
-    <title>Cinema</title>
-    <link href="css/Color.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="Scripts/SliderInitializer.js" defer></script>
-    <script src="Scripts/common.js"></script>
-    <script src="Scripts/HighLight.js" defer></script>
-</head>
-<body>
-<header class="header">
-    <div class="logo">
-        <img src="images/logo.svg"/>
+<section class="banner">
+    <img src="images/banner2.jpg" alt="banner"/>
+</section>
+<section class="about-theater">
+    <div class="container">
+        <div class="theater-header">
+            <h1 class="theater-name">Мир Кино</h1>
+            <div class="theater-header-images">
+                <img src="images/room.jpg"/>
+                <img src="images/room2.jpg"/>
+                <img src="images/room3.jpg"/>
+            </div>
+            <p class="description">
+                Кинотеатр "Мир Кино" — это современный культурный центр, где каждый зритель может найти идеальный
+                фильм для себя. Мы предлагаем вам уникальный кинематографический опыт благодаря нашим просторным
+                залам, новейшему оборудованию и разнообразным формам показа, от классического 2D до впечатляющего
+                IMAX и уютных VIP-залов.
+            </p>
+        </div>
     </div>
-    <nav class="menu">
+</section>
+<hr/>
+<section class="theater-services">
+    <h2>Наши услуги</h2>
+    <div class="services-block">
         <ul>
-            <li><a href="index">Главное</a></li>
-            <li><a href="Shedule">Расписание</a></li>
-            <li><a href="Colaboration">Сотрудничество</a></li>
-            <li><a href="Food">Заказ еды</a></li>
+            <li>Аренда залов для частных показов</li>
+            <li>Возможность забронировать билеты в любое время</li>
+            <li>Заказ еды прямо в зал</li>
         </ul>
-    </nav>
-    <script>
-
-    </script>
-</header>
-<main class="main">
-    <section class="banner">
-        <img src="images/banner2.jpg" alt="banner"/>
-    </section>
-    <section class="about-theater">
-        <div class="container">
-            <div class="theater-header">
-                <h1 class="theater-name">Мир Кино</h1>
-                <div class="theater-header-images">
-                    <img src="images/room.jpg"/>
-                    <img src="images/room2.jpg"/>
-                    <img src="images/room3.jpg"/>
-                </div>
-                <p class="description">
-                    Кинотеатр "Мир Кино" — это современный культурный центр, где каждый зритель может найти идеальный
-                    фильм для себя. Мы предлагаем вам уникальный кинематографический опыт благодаря нашим просторным
-                    залам, новейшему оборудованию и разнообразным формам показа, от классического 2D до впечатляющего
-                    IMAX и уютных VIP-залов.
-                </p>
-            </div>
-        </div>
-    </section>
-    <hr/>
-    <section class="theater-services">
-        <h2>Наши услуги</h2>
-        <div class="services-block">
-            <ul>
-                <li>Аренда залов для частных показов</li>
-                <li>Возможность забронировать билеты в любое время</li>
-                <li>Заказ еды прямо в зал</li>
-            </ul>
-            <aside class="aside">
-                <img src="images/room5.png"/>
-            </aside>
-        </div>
-    </section>
-    <hr />
-    <section class="new-films">
-        <h3>Уже в кино</h3>
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="swiper-slide">
-                    <article class="movie-card">
-                        <img src="images/movie1.jpg" alt="movie" />
-                        <div class="texts">
-                            <strong>Битлджус Битлджус</strong>
-                            <em>комедия, ужасы, фэнтези</em>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-
-    <section class="table-container">
-        <table class="responsive-table">
-            <thead>
-            <tr>
-                <th>Название</th>
-                <th>Дата</th>
-                <th>Зал</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>01.01.2024</td>
-                <td>Зал 1</td>
-            </tr>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>02.01.2024</td>
-                <td>Зал 2</td>
-            </tr>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>03.01.2024</td>
-                <td>Зал 3</td>
-            </tr>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>04.01.2024</td>
-                <td>Зал 4</td>
-            </tr>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>04.01.2024</td>
-                <td>Зал 4</td>
-            </tr>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>04.01.2024</td>
-                <td>Зал 4</td>
-            </tr>
-            <tr>
-                <td>Битлджус Битлджус</td>
-                <td>04.01.2024</td>
-                <td>Зал 4</td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-</main>
-<footer class="footer">
-    <div class="contacts">
-        <p>Контакт 1: <a href="#">Пук</a></p>
-        <p>Контакт 2: <a href="#">Пук пук</a></p>
+        <aside class="aside">
+            <img src="images/room5.png"/>
+        </aside>
     </div>
-    <pre class="ascii-art">
-         / \__
-       (    @\___
-        /         O
-      /   (_____/
-/_____/    U
-    </pre>
-    <code>
-        Debug.log("ANANAS")
-    </code>
-    <span>
-                Prod. by BBD74
-            </span>
+</section>
+<hr/>
+<section class="new-films">
+    <h3>Уже в кино</h3>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
 
-</footer>
-</body>
-</html>
+            <div class="swiper-slide">
+                <article class="movie-card">
+                    <img src="images/movie1.jpg" alt="movie"/>
+                    <div class="texts">
+                        <strong>Битлджус Битлджус</strong>
+                        <em>комедия, ужасы, фэнтези</em>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+
+<section class="table-container">
+    <table class="responsive-table">
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Дата</th>
+            <th>Зал</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>01.01.2024</td>
+            <td>Зал 1</td>
+        </tr>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>02.01.2024</td>
+            <td>Зал 2</td>
+        </tr>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>03.01.2024</td>
+            <td>Зал 3</td>
+        </tr>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>04.01.2024</td>
+            <td>Зал 4</td>
+        </tr>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>04.01.2024</td>
+            <td>Зал 4</td>
+        </tr>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>04.01.2024</td>
+            <td>Зал 4</td>
+        </tr>
+        <tr>
+            <td>Битлджус Битлджус</td>
+            <td>04.01.2024</td>
+            <td>Зал 4</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

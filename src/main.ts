@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { AppModule } from './app.module';
+import * as hbs from 'hbs';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -10,6 +11,11 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '../..', 'views'));
   console.log(join(__dirname,'../..', 'views'));
   app.setViewEngine('hbs');
+  hbs.registerHelper('asset', (path: string) => {
+    return '/' + path;
+  });
+  hbs.registerPartials(join(__dirname, '../..', 'views/partials'));
+
 
   const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
   await app.listen(port);
