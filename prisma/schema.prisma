@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Status {
+  Created
+  Process
+  Rejected
+  Approved
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  username String
+  email    String   @unique
+  tickets  Ticket[]
+}
+
+model Film {
+  id      Int     @id @default(autoincrement())
+  name    String
+  status  Status
+  tickets Ticket[]
+}
+
+model Ticket {
+  id     Int  @id @default(autoincrement())
+  film   Film @relation(fields: [filmId], references: [id])
+  filmId Int
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+}
+
+model Food {
+  id    Int    @id @default(autoincrement())
+  name  String
+  orders FoodOrder[] // просто массив без attributes
+}
+
+model FoodOrder {
+  id     Int     @id @default(autoincrement())
+  status Status
+  foods  Food[]  // и здесь
+}
