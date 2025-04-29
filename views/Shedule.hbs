@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Кинотеатр с удобным бронированием билетов, расписанием сеансов, заказом еды и эксклюзивными предложениями.">
+    <meta name="keywords" content="кинотеатр, бронирование билетов, расписание кино, заказ еды, эксклюзивные предложения, фильмы">
+    <title>Cinema</title>
+    <link href="../css/Color.css" rel="stylesheet"/>
+    <link href="../css/Schedule.css" rel="stylesheet"/>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/HighLight.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <img src="../images/logo.svg"/>
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Главное</a></li>
+            <li><a href="Shedule.html">Расписание</a></li>
+            <li><a href="Colaboration.html">Сотрудничество</a></li>
+            <li><a href="Food.html">Заказ еды</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Бронирование сеанса</h1>
+    <form id="booking-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="movie">Фильм:</label>
+        <select id="movie" name="movie" required></select>
+
+        <label for="datetime">Дата и время:</label>
+        <input type="datetime-local" id="datetime" name="datetime" required>
+
+        <label for="tickets">Количество билетов:</label>
+        <input type="number" id="tickets" name="tickets" min="1" required>
+
+        <button type="submit">Забронировать</button>
+        <button type="reset">Очистить форму</button>
+    </form>
+    <div id="confirmation" class="confirmation">
+        <table id="confirmation-table" class="confirmation-table">
+
+        </table>
+    </div>
+</main>
+<script src="../Scripts/schedueSaver.js"></script>
+<footer>
+
+</footer>
+</body>
+</html>

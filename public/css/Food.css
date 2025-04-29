@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+header {
+    background-color: #ff9800;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    background: #676767;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+}
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+.card-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.card-price {
+    color: #28a745;
+    font-size: 16px;
+    margin: 5px 0;
+}
+#preloader {
+    text-align: center;
+    margin-top: 20px;
+}
+#preloader img {
+    width: 50px;
+}
+#error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}

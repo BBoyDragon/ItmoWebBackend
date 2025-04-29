@@ -1,0 +1,10 @@
+:root {
+    --white: white;
+    --main: #000000;
+    --grey: #8B919B;
+    --detail: #e3000b;
+
+    --title: 24px;
+    --description: 16px;
+    --subtitle: 10px;
+}
