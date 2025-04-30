@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type FoodOrderModel {
+  id: Int!
+  status: String!
+  foods: [FoodModel!]
+}
+
+type FoodModel {
+  id: Int!
+  name: String!
+  price: Int!
+  orders: [FoodOrderModel!]
+}
+
+type Query {
+  foods: [FoodModel!]!
+  food(id: Int!): FoodModel!
+}
+
+type Mutation {
+  createFood(createFoodInput: CreateFoodInput!): FoodModel!
+}
+
+input CreateFoodInput {
+  name: String!
+  price: Int!
+}
