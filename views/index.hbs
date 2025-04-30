@@ -35,144 +35,24 @@
 </section>
 <hr/>
 <section class="new-films">
-    <h3>Уже в кино</h3>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
+  <h3>Уже в кино</h3>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {{#each films}}
+        <div class="swiper-slide">
+          <article class="movie-card">
+            <img src="{{this.image}}" alt="movie"/>
+            <div class="texts">
+              <strong>{{this.name}}</strong>
+              <em>{{this.genre}}</em>
             </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
-
-            <div class="swiper-slide">
-                <article class="movie-card">
-                    <img src="images/movie1.jpg" alt="movie"/>
-                    <div class="texts">
-                        <strong>Битлджус Битлджус</strong>
-                        <em>комедия, ужасы, фэнтези</em>
-                    </div>
-                </article>
-            </div>
+          </article>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+      {{/each}}
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
 </section>
 
-
-<section class="table-container">
-    <table class="responsive-table">
-        <thead>
-        <tr>
-            <th>Название</th>
-            <th>Дата</th>
-            <th>Зал</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>01.01.2024</td>
-            <td>Зал 1</td>
-        </tr>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>02.01.2024</td>
-            <td>Зал 2</td>
-        </tr>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>03.01.2024</td>
-            <td>Зал 3</td>
-        </tr>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>04.01.2024</td>
-            <td>Зал 4</td>
-        </tr>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>04.01.2024</td>
-            <td>Зал 4</td>
-        </tr>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>04.01.2024</td>
-            <td>Зал 4</td>
-        </tr>
-        <tr>
-            <td>Битлджус Битлджус</td>
-            <td>04.01.2024</td>
-            <td>Зал 4</td>
-        </tr>
-        </tbody>
-    </table>
-</section>

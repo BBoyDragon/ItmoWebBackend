@@ -29,6 +29,8 @@ export class FilmService {
       data: {
         name: dto.name,
         status: 'Created',
+        genre: dto.genre,
+        image: dto.image,
       },
     });
   }
@@ -65,6 +67,10 @@ export class FilmService {
 
   async remove(id: number): Promise<Film> {
     const film = await this.prisma.film.findUnique({ where: { id } });
+
+    await this.prisma.ticket.deleteMany({
+      where: { filmId: id },
+    });
 
     if (!film) {
       throw new NotFoundException(`Cannot delete. Film with ID ${id} not found.`);

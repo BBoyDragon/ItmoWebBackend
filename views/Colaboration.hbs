@@ -1,0 +1,50 @@
+<body>
+<h1>Create New User</h1>
+
+<form id="user-form">
+  <label for="username">Username:</label>
+  <input type="text" name="username" id="username" required>
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required>
+
+  <div id="error" class="error" style="color:red;"></div>
+  <div id="success" style="color:green;"></div>
+
+  <button type="submit">Create</button>
+</form>
+
+<script>
+  document.getElementById('user-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const errorDiv = document.getElementById('error');
+    const successDiv = document.getElementById('success');
+
+    errorDiv.textContent = '';
+    successDiv.textContent = '';
+
+    try {
+      const response = await fetch('/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        errorDiv.textContent = data.message || 'An error occurred.';
+      } else {
+        successDiv.textContent = 'User created successfully!';
+        document.getElementById('user-form').reset();
+      }
+    } catch (error) {
+      errorDiv.textContent = 'Network error or server is unavailable.';
+    }
+  });
+</script>
+</body>

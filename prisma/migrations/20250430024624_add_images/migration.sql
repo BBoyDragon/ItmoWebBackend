@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Film" ADD COLUMN     "genre" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "image" TEXT NOT NULL DEFAULT '';

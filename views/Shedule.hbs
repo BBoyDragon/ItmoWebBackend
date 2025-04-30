@@ -1,25 +1,22 @@
 <h1>Бронирование сеанса</h1>
 <form id="booking-form">
-    <label for="name">Имя:</label>
-    <input type="text" id="name" name="name" required>
+  <label for="email">Электронная почта:</label>
+  <input type="email" id="email" name="email" required>
 
-    <label for="email">Электронная почта:</label>
-    <input type="email" id="email" name="email" required>
+  <label for="name">Имя (автозаполнение):</label>
+  <input type="text" id="name" name="name" readonly>
 
-    <label for="movie">Фильм:</label>
-    <select id="movie" name="movie" required></select>
+  <label for="movie">Фильм:</label>
+  <select id="movie" name="movie" required></select>
 
-    <label for="datetime">Дата и время:</label>
-    <input type="datetime-local" id="datetime" name="datetime" required>
+  <label for="datetime">Дата и время:</label>
+  <input type="datetime-local" id="datetime" name="datetime" required>
 
-    <label for="tickets">Количество билетов:</label>
-    <input type="number" id="tickets" name="tickets" min="1" required>
-
-    <button type="submit">Забронировать</button>
-    <button type="reset">Очистить форму</button>
+  <button type="submit">Забронировать</button>
+  <button type="reset">Очистить форму</button>
 </form>
-<div id="confirmation" class="confirmation">
-    <table id="confirmation-table" class="confirmation-table">
 
-    </table>
+<div id="confirmation" class="confirmation" style="display: none;">
+  <h2>Бронирование подтверждено</h2>
+  <table id="confirmation-table" class="confirmation-table"></table>
 </div>

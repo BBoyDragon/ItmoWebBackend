@@ -26,6 +26,8 @@ model Film {
   id      Int     @id @default(autoincrement())
   name    String
   status  Status
+  genre   String @default("")
+  image   String @default("")
   tickets Ticket[]
 }
 
