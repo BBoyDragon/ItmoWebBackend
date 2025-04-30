@@ -15,10 +15,11 @@ enum Status {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  username String
-  email    String   @unique
-  tickets  Ticket[]
+  id          Int          @id @default(autoincrement())
+  username    String
+  email       String       @unique
+  tickets     Ticket[]
+  foodOrders  FoodOrder[]
 }
 
 model Film {
@@ -29,21 +30,25 @@ model Film {
 }
 
 model Ticket {
-  id     Int  @id @default(autoincrement())
-  film   Film @relation(fields: [filmId], references: [id])
-  filmId Int
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
+  id      Int      @id @default(autoincrement())
+  film    Film     @relation(fields: [filmId], references: [id])
+  filmId  Int
+  user    User     @relation(fields: [userId], references: [id])
+  userId  Int
+  price   Int  @default(0)
 }
 
 model Food {
-  id    Int    @id @default(autoincrement())
-  name  String
-  orders FoodOrder[] // просто массив без attributes
+  id     Int         @id @default(autoincrement())
+  name   String
+  price   Int     @default(0)
+  orders FoodOrder[]
 }
 
 model FoodOrder {
-  id     Int     @id @default(autoincrement())
-  status Status
-  foods  Food[]  // и здесь
+  id      Int     @id @default(autoincrement())
+  status  Status
+  foods   Food[]
+  user    User    @relation(fields: [userId], references: [id])
+  userId  Int
 }
