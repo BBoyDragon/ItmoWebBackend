@@ -1,7 +1,7 @@
-import {Module} from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { FilmModule } from './film/film.module';
 import { TicketModule } from './ticket/ticket.module';
@@ -11,26 +11,38 @@ import { FoodOrderModule } from './food-order/food-order.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
+import { TimingInterceptor } from './interceptors/timing.interceptor';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { ETagInterceptor } from './interceptors/etag.interceptor';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-    imports: [
-        GraphQLModule.forRoot<ApolloDriverConfig>({
-            driver: ApolloDriver,
-            autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-            playground: true,
-        }),
-        ConfigModule.forRoot({
-            isGlobal: true,
-        }),
-        PrismaModule,
-        UserModule,
-        FilmModule,
-        TicketModule,
-        FoodModule,
-        FoodOrderModule,
-    ],
-    controllers: [AppController],
-    providers: [AppService],
+  imports: [
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      playground: true,
+    }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    PrismaModule,
+    UserModule,
+    FilmModule,
+    TicketModule,
+    FoodModule,
+    FoodOrderModule,
+    AuthModule,
+  ],
+  controllers: [AppController],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ETagInterceptor,
+    }, {
+      provide: APP_INTERCEPTOR,
+      useClass: TimingInterceptor,
+    }, AppService],
 })
 export class AppModule {
 }

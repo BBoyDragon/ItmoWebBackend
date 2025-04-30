@@ -1,5 +1,5 @@
 import {
-  BadRequestException,
+  BadRequestException, Inject,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
@@ -7,10 +7,12 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateFoodDto } from './dto/create-food.dto';
 import { UpdateFoodDto } from './dto/update-food.dto';
 import { Food } from './entities/food.entity';
+import { CACHE_MANAGER, CacheKey, CacheTTL } from '@nestjs/common/cache';
+import type { Cache } from 'cache-manager';
 
 @Injectable()
 export class FoodService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService, @Inject(CACHE_MANAGER) private cacheManager: Cache) {}
 
   async create(dto: CreateFoodDto): Promise<Food> {
     if (!dto.name || dto.name.trim() === '') {
@@ -37,6 +39,8 @@ export class FoodService {
     });
   }
 
+  @CacheKey('foods')
+  @CacheTTL(30)
   async findAll(): Promise<Food[]> {
     return this.prisma.food.findMany({ include: { orders: true } });
   }
