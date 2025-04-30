@@ -10,10 +10,5 @@ import { FileStorageController } from './file-storage.controller';
 })
 export class FileStorageModule {
   constructor() {
-    AWS.config.update({
-      region: 'ru-central1',
-      accessKeyId: process.env.YANDEX_ACCESS_KEY,
-      secretAccessKey: process.env.YANDEX_SECRET_KEY,
-    });
   }
 }

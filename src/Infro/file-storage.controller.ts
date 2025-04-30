@@ -1,7 +1,8 @@
 import { Controller, Post, UseInterceptors, UploadedFile } from '@nestjs/common';
 import { FileStorageService } from './file-storage.service';
 import { FileInterceptor } from '@nestjs/platform-express';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('Files')
 @Controller('files')
 export class FileStorageController {
   constructor(private readonly fileStorageService: FileStorageService) {}

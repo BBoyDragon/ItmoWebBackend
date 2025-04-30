@@ -15,7 +15,7 @@ import { TimingInterceptor } from './interceptors/timing.interceptor';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ETagInterceptor } from './interceptors/etag.interceptor';
 import { AuthModule } from './auth/auth.module';
-
+import {FileStorageModule} from './Infro/file-storage.module'
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
@@ -26,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    FileStorageModule,
     PrismaModule,
     UserModule,
     FilmModule,
