@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -16,6 +16,8 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ETagInterceptor } from './interceptors/etag.interceptor';
 import { AuthModule } from './auth/auth.module';
 import {FileStorageModule} from './Infro/file-storage.module'
+import { TestingFlagMiddleware } from './IntegrationalTesting/Middlewares/TestingFlagMiddleware';
+import { TestingContextService } from './IntegrationalTesting/TestingContextService';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
@@ -43,7 +45,10 @@ import {FileStorageModule} from './Infro/file-storage.module'
     }, {
       provide: APP_INTERCEPTOR,
       useClass: TimingInterceptor,
-    }, AppService],
+    }, AppService, TestingContextService],
 })
-export class AppModule {
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(TestingFlagMiddleware).forRoutes('*');
+  }
 }
